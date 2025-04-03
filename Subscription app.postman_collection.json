@@ -1,0 +1,87 @@
+{
+	"info": {
+		"_postman_id": "5f61797a-8196-4858-9d85-04876e83c9f7",
+		"name": "Subscription app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12086969",
+		"_collection_link": "https://cqteam.postman.co/workspace/My-Workspace~8f457b3f-8e68-4b4b-8dde-fd3b327e50ca/collection/12086969-5f61797a-8196-4858-9d85-04876e83c9f7?action=share&source=collection_link&creator=12086969"
+	},
+	"item": [
+		{
+			"name": "1.1 List websites",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{apiUrl}}/websites",
+					"host": [
+						"{{apiUrl}}"
+					],
+					"path": [
+						"websites"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1.2 create post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\":\"The forest was alive with the sounds of nature\",\n    \"description\": \"Birds sang, leaves rustled, and a gentle stream trickled nearby. It was a symphony of life, a reminder of the world's beauty. The dense canopy overhead filtered the sunlight, creating a mosaic of light and shadow on the forest floor, a tranquil haven far from the chaos of modern life.\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{apiUrl}}/posts/:website_id",
+					"host": [
+						"{{apiUrl}}"
+					],
+					"path": [
+						"posts",
+						":website_id"
+					],
+					"variable": [
+						{
+							"key": "website_id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1.3 Subscribe",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"website_id\": 2,\n    \"email\":\"abctest@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{apiUrl}}/subscribe",
+					"host": [
+						"{{apiUrl}}"
+					],
+					"path": [
+						"subscribe"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
