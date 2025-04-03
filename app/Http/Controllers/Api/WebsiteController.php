@@ -17,12 +17,24 @@ class WebsiteController extends Controller
         $this->websiteService = $websiteService;
     }
 
+    /**
+     * Get websites
+     * @param Request $request
+     * 
+     * @return JsonResponse
+     */
     public function get(Request $request): JsonResponse {
         $websites = $this->websiteService->get();
         return response()->json(['success' => true,'data'=>['websites'=>$websites],'message'=>'Websites fetched']);
     }
 
 
+    /**
+     * Subscribing for notifications into website.
+     * @param SubsribeRequest $request
+     * 
+     * @return JsonResponse
+     */
     public function subscribe(SubsribeRequest $request): JsonResponse {
         try{
             $subsribe = $this->websiteService->subscribe($request->only(['email','website_id']));

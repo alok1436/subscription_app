@@ -19,6 +19,13 @@ class PostController extends Controller
         $this->postService = $postService;
     }
 
+    /**
+     * Creating post into particular website.
+     * @param Request $request
+     * @param $website_id
+     * 
+     * @return JsonResponse
+     */
     public function store(PostRequest $request, $website_id): JsonResponse {
         try{
             $website = Website::find($website_id);
