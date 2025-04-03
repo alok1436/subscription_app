@@ -29,8 +29,6 @@ class PostController extends Controller
 
             $request->merge(['website_id' => $website_id]);
             $post = $this->postService->store($request->only(['title','description','website_id']));
-            
-            event(new PostEvent($post));
 
             return response()->json(['success'=> true, 'message' => 'Post created.','post'=>$post], 201);
 

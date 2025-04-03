@@ -1,11 +1,13 @@
 <?php
 
 namespace App\Models;
-
+use App\Observers\PostObserver;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Attributes\ObservedBy;
 
+#[ObservedBy([PostObserver::class])]
 class Post extends Model
 {
     /**
