@@ -18,6 +18,8 @@ Change the smtp details to getting the notifications
 
 php artisan migrate
 
+php artisan db:seed
+
 ## Start the server
 
 php artisan serve
