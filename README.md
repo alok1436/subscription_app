@@ -1,4 +1,4 @@
-## About Laravel wallet
+## About Subscription platform
  
 Subscription platform refers creating the posts into a specific website where users can subscribe into particular website. Once they subcribe they will get start receiving notifications if any new post published.
 
