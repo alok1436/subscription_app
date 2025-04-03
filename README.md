@@ -21,7 +21,9 @@ php artisan migrate
 ## Start the server
 
 php artisan serve
+
 php artisan queue:work
+
 php artisan schedule:work
 
 ### API uses
